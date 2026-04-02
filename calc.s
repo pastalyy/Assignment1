@@ -41,6 +41,15 @@ add s0, s0, t2
 add s0, s0, t3
 add s0, s0, t4
 
+#set count to 0
+
+li s1, 0
+
+#load immediate value of 0 into integer register for if statement
+
+li s2, 0
+
+
 done:
 
  li a7, 10
