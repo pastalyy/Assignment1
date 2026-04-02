@@ -45,9 +45,38 @@ add s0, s0, t4
 
 li s1, 0
 
-#load immediate value of 0 into integer register for if statement
+#load immediate value of 1 for if statement
 
 li s2, 1
+
+#checks if number is less or equal to 0, if yes skips to next number if no add to counter
+
+blt t0, s2, jump1
+addi s1, s1, 1
+
+jump1:
+blt t1, s2, jump2
+addi s1, s1, 1
+
+jump2:
+blt t2, s2, jump3
+addi s1, s1, 1
+
+jump3:
+blt t3, s2, jump4
+addi s1, s1, 1
+
+jump4:
+blt t4, s2, jump5
+addi s1, s1, 1
+
+jump5:
+
+
+
+
+
+
 
 
 done:
