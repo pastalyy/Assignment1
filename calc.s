@@ -96,12 +96,33 @@ bge s3, t4, jump9
 mv s3, t4
 ecall
 
-jump9: https://github.com/pastalyy/Assignment1/blob/main/calc.s#L4C0
-bge s3, t5, jump10
-mv s3, t5
+jump9:
+
+#starts min at t0
+
+mv s4, t0
+
+#checks if min is less than current number, if yes skips to next number, if no moves number to min
+
+blt s4, t1, jump10
+mv s4, t1
+
+jump10: 
+blt s4, t2, jump11
+mv s4, t2
 ecall
 
-jump10:
+jump11: 
+blt s4, t3, jump12
+mv s4, t3
+ecall
+
+jump12: 
+blt s4, t4, jump13
+mv s4, t4
+ecall
+
+jump13:
 
 
 
