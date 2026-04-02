@@ -1,19 +1,28 @@
 .data
 
-element1: .word 1
+element1: .word PLACEHOLDER
 
-element2: .word 2
+element2: .word PLACEHOLDER
 
-element3: .word 10
+element3: .word PLACEHOLDER
 
-element4: .word -2
+element4: .word PLACEHOLDER
 
-element5: .word 5
+element5: .word PLACEHOLDER
 
 num_elements: .word 5
 
 #...to here---
 
+sum_msg: .string "Sum: "
+
+count_msg: .string "Count positive: "
+
+max_msg: .string "Max: "
+
+min_msg: .string "Min: "
+
+newline: .string "\n"
 .text
 
 main:
@@ -34,7 +43,7 @@ lw t2, 0(t2)
 lw t3, 0(t3)
 lw t4, 0(t4)
 
-#sums numbers into s0
+#sums numbers into s0, a saved register
 
 add s0, t0, t1
 add s0, s0, t2
@@ -124,15 +133,45 @@ ecall
 
 jump13:
 
+#printing 
 
+#loads the message into a0 the return register, prints it, loads the corresponding value into a0, prints it, loads newline into a0, prints it
 
+la a0, sum_msg
+print_string
 
+mv a0, s0
+print_int
 
+la a0, newline
+print_string
 
+la a0, count_msg
+print_string
 
+mv a0, s1
+print_int
 
+la a0, newline
+print_string
 
+la a0, max_msg
+print_string
 
+mv a0, s3
+print_int
+
+la a0, newline
+print_string
+
+la a0, min_msg
+print_string
+
+mv a0, s4
+print_int
+
+la a0, newline
+print_string
 
 done:
 
