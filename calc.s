@@ -47,7 +47,7 @@ li s1, 0
 
 #load immediate value of 0 into integer register for if statement
 
-li s2, 0
+li s2, 1
 
 
 done:
